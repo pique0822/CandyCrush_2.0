@@ -104,6 +104,9 @@ var newBoard = function()
 {
   $('#middleColumn').empty();
   reset();
+  $('#score').css('color','white');
+  $('#score').css('background-color','purple');
+  $('#score').html(0 + " points");
   //console.log(board.boardSize);
   //this will guarantee that we only have the variables that are considered okay for the board size;
   for( i = 0; i < board.boardSize; i++)
@@ -367,7 +370,7 @@ $(document).on('click','#showMoveTable',function(evt)
     var row = Math.floor(Math.abs(evt.pageY - canvasPos.top)/CELL_SIZE);
     $('#cellMoving').val("");
     var text = ROW_TO_LETTERS[row] + (col+1);
-    $('#cellMoving').val(text);//sets the text
+    $('#cellMoving').val(text);//sets the textbox to have the correct
     reset();
     validateMoves();
 });
